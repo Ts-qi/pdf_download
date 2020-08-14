@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.4"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "html-pdf": "^2.2.0",
+    "nodemon": "^2.0.4",
+    "phantomjs-prebuilt": "^2.1.16"
   }
 }
