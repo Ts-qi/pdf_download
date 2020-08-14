@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import axios from 'axios'
+import { saveAs } from 'file-saver'
+import { Input, Col, Row ,Button} from 'antd'
+const styles = {
+  marginLeft:20
+}
 
 function App() {
+  const handleDownloadPdf = () => {
+    console.log(1)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1> PDF 配置下载</h1>
+        <Row>
+          <Col span={4} style={styles}>
+            
+            <Input placeholder="aaa"/>
+          </Col>
+          <Col span={4} style={styles}> 
+            <Input placeholder="aaa"/>
+          </Col>
+          <Col span={4} style={styles}> 
+            <Input placeholder="aaa"/>
+          </Col>
+          <Col span={4} style={styles}> 
+            <Input placeholder="aaa"/>
+          </Col>
+          <Button style={styles} 
+            onClick={handleDownloadPdf}
+          >下载</Button>
+        </Row>
     </div>
   );
 }
