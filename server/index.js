@@ -13,11 +13,12 @@ app.use(bodyParser.json());
 
 // post 
 app.post('/create-pdf',(req,res) => {
-  pdf.create(pdfTemplate(req.data),{}).toFile('result.pdf',(err) => {
+  console.log(11,port)
+  pdf.create(pdfTemplate(req.body),{}).toFile('result.pdf',(err) => {
     if(err) {
-      return Promise.all.reject()
+      res.send( Promise.reject())
     }
-    return Promise.resolve()
+    res.send(Promise.resolve()) 
   })
 })
 // get 
@@ -25,4 +26,4 @@ app.get('/fetch-pdf',(req,res) => {
   res.sendFile(`${__dirname}/result.pdf`)
 })
 
-app.listen(port,()=> console.log('start succrss'))
+app.listen(port,()=> console.log(`Listening on port ${ port}`))
